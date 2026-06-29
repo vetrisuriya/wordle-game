@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Lexora icon">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6C63FF"/><stop offset=".52" stop-color="#58E1FF"/><stop offset="1" stop-color="#FF6EC7"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="24" stdDeviation="28" flood-opacity=".35"/></filter></defs>
+  <rect width="512" height="512" rx="128" fill="#0B1020"/>
+  <circle cx="126" cy="122" r="118" fill="#6C63FF" opacity=".35"/>
+  <circle cx="394" cy="158" r="124" fill="#58E1FF" opacity=".25"/>
+  <path filter="url(#s)" d="M142 130h228v68H222v74h126v66H222v44h154v68H142z" fill="url(#g)"/>
+</svg>
