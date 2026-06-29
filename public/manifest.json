@@ -1,0 +1,17 @@
+{
+  "name": "Lexora",
+  "short_name": "Lexora",
+  "description": "The Beautiful Daily Word Challenge",
+  "display": "standalone",
+  "start_url": ".",
+  "scope": ".",
+  "theme_color": "#0B1020",
+  "background_color": "#0B1020",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Daily Challenge", "url": "./?mode=daily" },
+    { "name": "Practice", "url": "./?mode=practice" }
+  ]
+}
