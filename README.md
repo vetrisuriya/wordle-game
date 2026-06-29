@@ -9,7 +9,7 @@ Lexora is a Wordle-inspired platform, not a clone. The goal is to combine a prem
 - **Static-first app**: Vite, React, TypeScript, and GitHub Pages-friendly relative asset paths.
 - **Offline/PWA support**: `vite-plugin-pwa`, Web App Manifest metadata, SVG app icon, and Workbox asset caching.
 - **Game engine**: deterministic UTC daily puzzle selection, practice-word selection, validation, and duplicate-aware guess scoring.
-- **Initial languages**: English and Tamil packs with `dictionary.json`, `daily.json`, `valid.json`, `metadata.json`, and Unicode normalization adapters.
+- **Initial languages**: English and Tamil packs with `dictionary.json`, `daily.json`, `valid.json`, `metadata.json`, Unicode normalization adapters, and a 5,000+ entry English dictionary for broader validation coverage.
 - **Local-only state**: Zustand for app state and LocalStorage helpers for preferences and statistics.
 - **Premium UI direction**: aurora gradients, glass panels, animated board/keyboard interactions, theme hooks, and responsive layout.
 - **Accessibility foundations**: semantic labels, keyboard input, reduced-motion CSS, contrast/large-text toggles, and color-aware tile states.
