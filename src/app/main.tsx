@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Settings, Share2, Sparkles, Volume2 } from 'lucide-react';
@@ -64,6 +64,16 @@ function Keyboard() {
 function App() {
   const { prefs, setPref, newGame, input, status, message, stats, share } = useGame();
 
+  const copyShare = useCallback(async () => {
+    const text = share();
+    try {
+      await navigator.clipboard.writeText(text);
+      window.alert('Result copied to clipboard!');
+    } catch {
+      window.prompt('Copy your Lexora result', text);
+    }
+  }, [share]);
+
   useEffect(() => {
     newGame();
     const handler = (event: KeyboardEvent) => input(event.key);
@@ -92,7 +102,7 @@ function App() {
           </p>
           <h1>Lexora</h1>
         </div>
-        <button onClick={() => navigator.clipboard?.writeText(share())} aria-label="Copy share result">
+        <button onClick={copyShare} aria-label="Copy share result">
           <Share2 />
         </button>
       </motion.header>
@@ -148,8 +158,8 @@ function App() {
           <h2>
             <Settings /> Command Center
           </h2>
-          <label>
-            Theme
+          <label className="field">
+            <span>Theme</span>
             <select value={prefs.theme} onChange={(event) => setPref('theme', event.target.value)}>
               {themes.map((theme) => (
                 <option key={theme}>{theme}</option>
@@ -158,7 +168,7 @@ function App() {
           </label>
           <div className="toggles">
             {(['reducedMotion', 'highContrast', 'colorBlind', 'largeText'] as const).map((key) => (
-              <label key={key}>
+              <label className="toggle" key={key}>
                 <input
                   type="checkbox"
                   checked={Boolean(prefs[key])}
@@ -187,7 +197,7 @@ function App() {
         </aside>
       </section>
 
-      <footer>Open source. Offline first. No login, ads, or tracking.</footer>
+      <footer>Designed with love by <a href="https://vetrisuriya.in/" target="_blank" rel="noreferrer">Vetri Suriya</a>. Open source. Offline first. No login, ads, or tracking.</footer>
     </main>
   );
 }
