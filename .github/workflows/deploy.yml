@@ -20,12 +20,12 @@ jobs:
       - run: npm test
       - run: npm run build
       - uses: actions/upload-pages-artifact@v4
-        if: github.ref == 'refs/heads/main' && vars.ENABLE_PAGES_DEPLOY == 'true'
+        if: github.ref == 'refs/heads/main'
         with:
           path: dist
 
   deploy:
-    if: github.ref == 'refs/heads/main' && vars.ENABLE_PAGES_DEPLOY == 'true'
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:

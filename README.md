@@ -57,14 +57,9 @@ Then export the pack from `src/features/languages/index.ts`.
 
 The workflow in `.github/workflows/deploy.yml` always runs install, lint, tests, and build on pushes and pull requests.
 
-GitHub Pages deployment is intentionally gated by the repository variable `ENABLE_PAGES_DEPLOY=true`. This prevents fresh forks or repositories without Pages enabled from failing with the GitHub API `404 Not Found` error returned by `actions/deploy-pages`.
+GitHub Pages deployment runs automatically on pushes to `main` after lint, tests, and production build complete successfully.
 
-To enable deployment:
-
-1. Open **Settings → Pages** for the repository.
-2. Set the source to **GitHub Actions**.
-3. Add a repository variable named `ENABLE_PAGES_DEPLOY` with value `true`.
-4. Push to `main`.
+Before the first deployment, open **Settings → Pages** for the repository and set the source to **GitHub Actions**. After Pages is enabled, every push to `main` publishes the generated `dist` artifact.
 
 ## Privacy
 
