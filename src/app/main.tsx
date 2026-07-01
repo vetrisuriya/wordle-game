@@ -197,7 +197,7 @@ function App() {
         </aside>
       </section>
 
-      <footer>Designed with love by <a href="https://vetrisuriya.in/" target="_blank" rel="noreferrer">Vetri Suriya</a>. Open source. Offline first. No login, ads, or tracking.</footer>
+      <footer>Designed with love by <a href="https://vetrisuriya.in/" target="_blank" rel="noreferrer">Vetri Suriya</a>.</footer>
     </main>
   );
 }
